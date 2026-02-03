@@ -6,7 +6,7 @@
 
 **一站式本地大模型部署教程**
 
-> 基于 Ollama 在 Jetson 设备上轻松部署 DeepSeek、Qwen 等大语言模型，享受完全本地化、隐私安全的 AI 体验
+> 基于 Ollama 在本地设备上轻松部署 DeepSeek、Qwen 等大语言模型，享受完全本地化、隐私安全的 AI 体验
 
 [![文档状态](https://img.shields.io/badge/docs-v1.0-blue)](./docs/deepseek-setup.md)
 [![License](https://img.shields.io/badge/license-MIT-green)]()
@@ -19,7 +19,7 @@
 
 ## 📖 项目简介
 
-本项目提供了在本地 Jetson 设备上部署大语言模型的完整教程，涵盖从基础概念到实战部署的全流程。通过本教程，你可以：
+本项目提供了在本地设备上部署大语言模型的完整教程，涵盖从基础概念到实战部署的全流程。通过本教程，你可以：
 
 - 🚀 快速搭建本地 DeepSeek 大模型
 - 🐋 使用 Ollama 管理多个大模型
