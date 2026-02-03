@@ -1,4 +1,4 @@
-# 手把手搭建DeepSeek本地大模型
+# 🚀 手把手搭建DeepSeek本地大模型
 
 不得不说，最近大模型火得一塌糊涂，尤其是DeepSeek大杀四方。
 
@@ -6,43 +6,43 @@
 
 在正式开始部署本地大模型之前，先对齐基本概念。
 
-## 基本概念
+## 📚 基本概念
 
-### 大型语言模型（LLM）
+### 🧠 大型语言模型（LLM）
 
 大型语言模型（Large Language Models，简称LLM），是一种基于深度学习的自然语言处理模型，通过大规模语料库的训练，能够生成、理解和处理复杂的文本数据。
 
-### DeepSeek
+### 🔥 DeepSeek
 
-![alt text](images/deepseek.png)
+![alt text](../images/deepseek.png)
 
 [DeepSeek](https://www.deepseek.com/)是深度求索公司开发的深度学习模型搜索引擎，当前最新版本DeepSeek-R1。号称在GPU受限的前提下精进算法参数就足以吊打闭源的ChatGPT-4o。到底有没有这么神奇，还需要时间的检验。另外需要知道的一点是，参数集规模。比如DeepSeek-R1:1.5B，这里的1.5B指的是参数集规模，B是Billion（十亿）的缩写，1.5B指的是15亿参数集规模。参数集规模越大，意味着回答更精准，但同时对于机器的硬件要求也就越高，尤其是GPU性能和内存容量。
 
-### Ollama
+### 🐋 Ollama
 
-<img  src="images/ollama.png" width="300" />
+<img  src="../images/ollama.png" width="300" />
 
 Ollama提供了一种简化的方式，使得开发者能够在没有云计算依赖的情况下直接在本地机器上运行强大的语言模型，从而降低延迟并提高隐私保护。简单来说，Ollama是一个容器，或者说它就是搭载本地大模型的一艘货轮。想要把DeepSeek、Qwen、LLaVA等等大模型都装到本机上运行，就需要把Ollama先配好。当然，这个可能是最不困难的事情。
 
-### Open WebUI
+### 🖥️ Open WebUI
 
-<img  src="images/openwebui.png" width="300" />
+<img  src="../images/openwebui.png" width="300" />
 
 Open WebUI是一个开源的 Web 用户界面（UI）框架，用于简化 Web 应用程序的开发和管理。它通常用于提供可自定义的、易于操作的界面，支持用户通过浏览器与应用进行交互。Ollama提供的是一个极客风格命令行聊天界面，还需要给它换身衣服才好出来见人，这就需要Open WebUI来套个壳。当然，有了Open WebUI之后，我们还能很方便的选择其它大模型，或者与大模型语音交互。又或者一不留神，就开发了一个AI语音聊天机器人。
 
-### Docker
+### 🐳 Docker
 
-<img  src="images/docker.png" width="300" />
+<img  src="../images/docker.png" width="300" />
 
 Docker是一个开源的容器化平台，用于自动化应用程序的部署、扩展和管理。它通过将应用程序及其所有依赖项（包括操作系统库和环境）打包到一个标准化的容器中，使得应用能够在任何环境中一致运行，无论是开发、测试还是生产环境。换言之，Docker是另一艘货轮，用来运载已经打包好的服务，比如我们后面要讲的Open WebUI。
 
-### Portainer
+### 🎛️ Portainer
 
-<img  src="images/Portainer.png" width="300" />
+<img  src="../images/Portainer.png" width="300" />
 
 Portainer 是一个基于 Web 的轻量级 Docker 容器管理工具，它使得管理和监控 Docker 环境变得更加简单和直观。通过 Portainer，用户可以通过图形化界面对 Docker 容器、镜像、网络、数据卷等资源进行管理，无需使用命令行，从而提高了使用 Docker 的便捷性和效率。
 
-## 部署Ollama
+## 📥 部署Ollama
 
 部署OLlama有2种方式：  
 
@@ -64,7 +64,7 @@ curl -fsSL https://ollama.com/install.sh | sh
 Ollama is running
 ```
 
-## 部署DeepSeek
+## 🤖 部署DeepSeek
 
 DeepSeek-R1是最近发布的大模型，号称超越ChatGPT-4o。
 
@@ -104,11 +104,11 @@ ollama run deepseek-r1:1.5b "聊聊封神榜"
 ollama run deepseek-r1:1.5b
 ```
 
-## 搭建Web服务
+## 🌐 搭建Web服务
 
 终端极客版本的大模型用起来看着不那么友好，还是Web界面操作更有亲和力。
 
-### 部署Docker
+### 🐳 部署Docker
 
 附上Docker桌面版下载（命令安装）地址：
 
@@ -118,7 +118,7 @@ ollama run deepseek-r1:1.5b
 
 注意区分CPU架构版本，只要能正常启动Docker就可以部署Open WebUI了。
 
-### 部署Portainer
+### 🎛️ 部署Portainer
 
 Portainer同样也是一个Docker镜像，执行以下命令直接拉取Docker镜像并部署容器。
 
@@ -135,9 +135,9 @@ docker run -d \
 
 然后登陆(<http://localhost:9000>)注册并登录后就可以进入管理界面。
 
-<img  src="images/portainer-1.png" width="500" />
+<img  src="../images/portainer-1.png" width="500" />
 
-### 部署Open WebUI
+### 🖥️ 部署Open WebUI
 
 一般情况下，执行以下代码，拉取Docker镜像，并启动Open WebUI服务。
 
@@ -175,7 +175,7 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 ```
 
-### 异常情况
+### ⚠️ 异常情况
 
 难免在启动Open WebUI过程中会与遇到以下异常。
 
@@ -209,23 +209,23 @@ docker run -d \
     --restart always ghcr.io/open-webui/open-webui:main
 ```
 
-## 首次使用Open WebUI
+## 🎉 首次使用Open WebUI
 
 现在可以直接打开(<http://localhost:8080>)访问Open WebUI了。
 
 第一次使用Open WebUI需要注册管理员账号。
 
-<img  src="images/first_use_openwebui.png" width="300" />
+<img  src="../images/first_use_openwebui.png" width="300" />
 
-## 配置大模型
+## ⚙️ 配置大模型
 
 第一次使用Open WebUI时，可以在左上角`选择一个模型`点开，键入需要拉取的模型名称，点击`从Ollama.com拉取...`即可。
 
-<img  src="images/configure_llm.png" width="300" />
+<img  src="../images/configure_llm.png" width="300" />
 
 接下来就可以使用Open WebUI进行大模型对话了。
 
-## 附录：推荐模型
+## 📋 附录：推荐模型
 
 能聊天的大模型，除了DeepSeek，还是阿里云的通义千问（Qwen2/Qwen2.5），好玩的模型还有很多。LLaVA-Phi3能够识别图像，配合其它工具还能使用DeepSeek-Coder写代码。能在Ollama中运行的大模型还有很多。
 
